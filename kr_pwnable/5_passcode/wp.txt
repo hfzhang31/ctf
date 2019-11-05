@@ -1,0 +1,3 @@
+python -c "print 'A'*96+'\x00\xa0\x04\x08'+'134514147\n'"|./passcode
+这里要注意的是，printf@plt的第一句是跳转到printf的首地址（相当于调用printf）
+这里利用的漏洞是login函数中调用scantf的时候没有加取地址符号，导致scanf修改的内容是passcode1的数值所指向的位置，再利用welcome中name的位置是ebp-0x70,passcode1的位置是ebp-0x10,相差0x60=96个字节，所以可以覆盖到passcode1.如此将passcode1覆盖为printf@plt中存储printf首地址的内存单元的地址(0x804a000)，再在scanf的输入system("/bin/sh cat flag")的首地址，就可以在调用printf时，直接跳转到system("/bin/sh cat flag")
