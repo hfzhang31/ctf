@@ -7,11 +7,11 @@ typedef struct tagOBJ{
 	char buf[8];
 }OBJ;
 
-void shell(){
+void shell(){  //0x80484f4
 	system("/bin/sh");
 }
 
-void unlink(OBJ* P){
+void unlink(OBJ* P){ //0x8048504
 	OBJ* BK;
 	OBJ* FD;
 	BK=P->bk;

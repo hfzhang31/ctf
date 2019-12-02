@@ -1,0 +1,306 @@
+
+unlink:	file format ELF32-i386
+
+Disassembly of section .init:
+_init:
+ 8048348:	53 	pushl	%ebx
+ 8048349:	83 ec 08 	subl	$8, %esp
+ 804834c:	e8 cf 00 00 00 	calll	207 <__x86.get_pc_thunk.bx>
+ 8048351:	81 c3 af 1c 00 00 	addl	$7343, %ebx
+ 8048357:	8b 83 fc ff ff ff 	movl	-4(%ebx), %eax
+ 804835d:	85 c0 	testl	%eax, %eax
+ 804835f:	74 05 	je	5 <_init+0x1e>
+ 8048361:	e8 7a 00 00 00 	calll	122
+ 8048366:	83 c4 08 	addl	$8, %esp
+ 8048369:	5b 	popl	%ebx
+ 804836a:	c3 	retl
+Disassembly of section .plt:
+.plt:
+ 8048370:	ff 35 04 a0 04 08 	pushl	134520836
+ 8048376:	ff 25 08 a0 04 08 	jmpl	*134520840
+ 804837c:	00 00 	addb	%al, (%eax)
+ 804837e:	00 00 	addb	%al, (%eax)
+ 8048380:	ff 25 0c a0 04 08 	jmpl	*134520844
+ 8048386:	68 00 00 00 00 	pushl	$0
+ 804838b:	e9 e0 ff ff ff 	jmp	-32 <.plt>
+ 8048390:	ff 25 10 a0 04 08 	jmpl	*134520848
+ 8048396:	68 08 00 00 00 	pushl	$8
+ 804839b:	e9 d0 ff ff ff 	jmp	-48 <.plt>
+ 80483a0:	ff 25 14 a0 04 08 	jmpl	*134520852
+ 80483a6:	68 10 00 00 00 	pushl	$16
+ 80483ab:	e9 c0 ff ff ff 	jmp	-64 <.plt>
+ 80483b0:	ff 25 18 a0 04 08 	jmpl	*134520856
+ 80483b6:	68 18 00 00 00 	pushl	$24
+ 80483bb:	e9 b0 ff ff ff 	jmp	-80 <.plt>
+ 80483c0:	ff 25 1c a0 04 08 	jmpl	*134520860
+ 80483c6:	68 20 00 00 00 	pushl	$32
+ 80483cb:	e9 a0 ff ff ff 	jmp	-96 <.plt>
+ 80483d0:	ff 25 20 a0 04 08 	jmpl	*134520864
+ 80483d6:	68 28 00 00 00 	pushl	$40
+ 80483db:	e9 90 ff ff ff 	jmp	-112 <.plt>
+Disassembly of section .plt.got:
+.plt.got:
+ 80483e0:	ff 25 fc 9f 04 08 	jmpl	*134520828
+ 80483e6:	66 90 	nop
+Disassembly of section .text:
+_start:
+ 80483f0:	31 ed 	xorl	%ebp, %ebp
+ 80483f2:	5e 	popl	%esi
+ 80483f3:	89 e1 	movl	%esp, %ecx
+ 80483f5:	83 e4 f0 	andl	$-16, %esp
+ 80483f8:	50 	pushl	%eax
+ 80483f9:	54 	pushl	%esp
+ 80483fa:	52 	pushl	%edx
+ 80483fb:	68 70 86 04 08 	pushl	$134514288
+ 8048400:	68 10 86 04 08 	pushl	$134514192
+ 8048405:	51 	pushl	%ecx
+ 8048406:	56 	pushl	%esi
+ 8048407:	68 2f 85 04 08 	pushl	$134513967
+ 804840c:	e8 bf ff ff ff 	calll	-65 <.plt+0x60>
+ 8048411:	f4 	hlt
+ 8048412:	66 90 	nop
+ 8048414:	66 90 	nop
+ 8048416:	66 90 	nop
+ 8048418:	66 90 	nop
+ 804841a:	66 90 	nop
+ 804841c:	66 90 	nop
+ 804841e:	66 90 	nop
+
+__x86.get_pc_thunk.bx:
+ 8048420:	8b 1c 24 	movl	(%esp), %ebx
+ 8048423:	c3 	retl
+ 8048424:	66 90 	nop
+ 8048426:	66 90 	nop
+ 8048428:	66 90 	nop
+ 804842a:	66 90 	nop
+ 804842c:	66 90 	nop
+ 804842e:	66 90 	nop
+
+deregister_tm_clones:
+ 8048430:	b8 2f a0 04 08 	movl	$134520879, %eax
+ 8048435:	2d 2c a0 04 08 	subl	$134520876, %eax
+ 804843a:	83 f8 06 	cmpl	$6, %eax
+ 804843d:	76 1a 	jbe	26 <deregister_tm_clones+0x29>
+ 804843f:	b8 00 00 00 00 	movl	$0, %eax
+ 8048444:	85 c0 	testl	%eax, %eax
+ 8048446:	74 11 	je	17 <deregister_tm_clones+0x29>
+ 8048448:	55 	pushl	%ebp
+ 8048449:	89 e5 	movl	%esp, %ebp
+ 804844b:	83 ec 14 	subl	$20, %esp
+ 804844e:	68 2c a0 04 08 	pushl	$134520876
+ 8048453:	ff d0 	calll	*%eax
+ 8048455:	83 c4 10 	addl	$16, %esp
+ 8048458:	c9 	leave
+ 8048459:	f3 c3 	rep		retl
+ 804845b:	90 	nop
+ 804845c:	8d 74 26 00 	leal	(%esi), %esi
+
+register_tm_clones:
+ 8048460:	b8 2c a0 04 08 	movl	$134520876, %eax
+ 8048465:	2d 2c a0 04 08 	subl	$134520876, %eax
+ 804846a:	c1 f8 02 	sarl	$2, %eax
+ 804846d:	89 c2 	movl	%eax, %edx
+ 804846f:	c1 ea 1f 	shrl	$31, %edx
+ 8048472:	01 d0 	addl	%edx, %eax
+ 8048474:	d1 f8 	sarl	%eax
+ 8048476:	74 1b 	je	27 <register_tm_clones+0x33>
+ 8048478:	ba 00 00 00 00 	movl	$0, %edx
+ 804847d:	85 d2 	testl	%edx, %edx
+ 804847f:	74 12 	je	18 <register_tm_clones+0x33>
+ 8048481:	55 	pushl	%ebp
+ 8048482:	89 e5 	movl	%esp, %ebp
+ 8048484:	83 ec 10 	subl	$16, %esp
+ 8048487:	50 	pushl	%eax
+ 8048488:	68 2c a0 04 08 	pushl	$134520876
+ 804848d:	ff d2 	calll	*%edx
+ 804848f:	83 c4 10 	addl	$16, %esp
+ 8048492:	c9 	leave
+ 8048493:	f3 c3 	rep		retl
+ 8048495:	8d 74 26 00 	leal	(%esi), %esi
+ 8048499:	8d bc 27 00 00 00 00 	leal	(%edi), %edi
+
+__do_global_dtors_aux:
+ 80484a0:	80 3d 2c a0 04 08 00 	cmpb	$0, 134520876
+ 80484a7:	75 13 	jne	19 <__do_global_dtors_aux+0x1c>
+ 80484a9:	55 	pushl	%ebp
+ 80484aa:	89 e5 	movl	%esp, %ebp
+ 80484ac:	83 ec 08 	subl	$8, %esp
+ 80484af:	e8 7c ff ff ff 	calll	-132 <deregister_tm_clones>
+ 80484b4:	c6 05 2c a0 04 08 01 	movb	$1, 134520876
+ 80484bb:	c9 	leave
+ 80484bc:	f3 c3 	rep		retl
+ 80484be:	66 90 	nop
+
+frame_dummy:
+ 80484c0:	b8 10 9f 04 08 	movl	$134520592, %eax
+ 80484c5:	8b 10 	movl	(%eax), %edx
+ 80484c7:	85 d2 	testl	%edx, %edx
+ 80484c9:	75 05 	jne	5 <frame_dummy+0x10>
+ 80484cb:	eb 93 	jmp	-109 <register_tm_clones>
+ 80484cd:	8d 76 00 	leal	(%esi), %esi
+ 80484d0:	ba 00 00 00 00 	movl	$0, %edx
+ 80484d5:	85 d2 	testl	%edx, %edx
+ 80484d7:	74 f2 	je	-14 <frame_dummy+0xb>
+ 80484d9:	55 	pushl	%ebp
+ 80484da:	89 e5 	movl	%esp, %ebp
+ 80484dc:	83 ec 14 	subl	$20, %esp
+ 80484df:	50 	pushl	%eax
+ 80484e0:	ff d2 	calll	*%edx
+ 80484e2:	83 c4 10 	addl	$16, %esp
+ 80484e5:	c9 	leave
+ 80484e6:	e9 75 ff ff ff 	jmp	-139 <register_tm_clones>
+
+shell:
+ 80484eb:	55 	pushl	%ebp
+ 80484ec:	89 e5 	movl	%esp, %ebp
+ 80484ee:	83 ec 08 	subl	$8, %esp
+ 80484f1:	83 ec 0c 	subl	$12, %esp
+ 80484f4:	68 90 86 04 08 	pushl	$134514320
+ 80484f9:	e8 c2 fe ff ff 	calll	-318 <.plt+0x50>
+ 80484fe:	83 c4 10 	addl	$16, %esp
+ 8048501:	90 	nop
+ 8048502:	c9 	leave
+ 8048503:	c3 	retl
+
+unlink:
+ 8048504:	55 	pushl	%ebp
+ 8048505:	89 e5 	movl	%esp, %ebp
+ 8048507:	83 ec 10 	subl	$16, %esp
+ 804850a:	8b 45 08 	movl	8(%ebp), %eax
+ 804850d:	8b 40 04 	movl	4(%eax), %eax
+ 8048510:	89 45 fc 	movl	%eax, -4(%ebp)
+ 8048513:	8b 45 08 	movl	8(%ebp), %eax
+ 8048516:	8b 00 	movl	(%eax), %eax
+ 8048518:	89 45 f8 	movl	%eax, -8(%ebp)
+ 804851b:	8b 45 f8 	movl	-8(%ebp), %eax
+ 804851e:	8b 55 fc 	movl	-4(%ebp), %edx
+ 8048521:	89 50 04 	movl	%edx, 4(%eax)
+ 8048524:	8b 45 fc 	movl	-4(%ebp), %eax
+ 8048527:	8b 55 f8 	movl	-8(%ebp), %edx
+ 804852a:	89 10 	movl	%edx, (%eax)
+ 804852c:	90 	nop
+ 804852d:	c9 	leave
+ 804852e:	c3 	retl
+
+main:
+ 804852f:	8d 4c 24 04 	leal	4(%esp), %ecx
+ 8048533:	83 e4 f0 	andl	$-16, %esp
+ 8048536:	ff 71 fc 	pushl	-4(%ecx)
+ 8048539:	55 	pushl	%ebp
+ 804853a:	89 e5 	movl	%esp, %ebp
+ 804853c:	51 	pushl	%ecx
+ 804853d:	83 ec 14 	subl	$20, %esp
+ 8048540:	83 ec 0c 	subl	$12, %esp
+ 8048543:	68 00 04 00 00 	pushl	$1024
+ 8048548:	e8 53 fe ff ff 	calll	-429 <.plt+0x30>
+ 804854d:	83 c4 10 	addl	$16, %esp
+ 8048550:	83 ec 0c 	subl	$12, %esp
+ 8048553:	6a 10 	pushl	$16
+ 8048555:	e8 46 fe ff ff 	calll	-442 <.plt+0x30>
+ 804855a:	83 c4 10 	addl	$16, %esp
+ 804855d:	89 45 ec 	movl	%eax, -20(%ebp)
+ 8048560:	83 ec 0c 	subl	$12, %esp
+ 8048563:	6a 10 	pushl	$16
+ 8048565:	e8 36 fe ff ff 	calll	-458 <.plt+0x30>
+ 804856a:	83 c4 10 	addl	$16, %esp
+ 804856d:	89 45 f4 	movl	%eax, -12(%ebp)
+ 8048570:	83 ec 0c 	subl	$12, %esp
+ 8048573:	6a 10 	pushl	$16
+ 8048575:	e8 26 fe ff ff 	calll	-474 <.plt+0x30>
+ 804857a:	83 c4 10 	addl	$16, %esp
+ 804857d:	89 45 f0 	movl	%eax, -16(%ebp)
+ 8048580:	8b 45 ec 	movl	-20(%ebp), %eax
+ 8048583:	8b 55 f4 	movl	-12(%ebp), %edx
+ 8048586:	89 10 	movl	%edx, (%eax)
+ 8048588:	8b 55 ec 	movl	-20(%ebp), %edx
+ 804858b:	8b 45 f4 	movl	-12(%ebp), %eax
+ 804858e:	89 50 04 	movl	%edx, 4(%eax)
+ 8048591:	8b 45 f4 	movl	-12(%ebp), %eax
+ 8048594:	8b 55 f0 	movl	-16(%ebp), %edx
+ 8048597:	89 10 	movl	%edx, (%eax)
+ 8048599:	8b 45 f0 	movl	-16(%ebp), %eax
+ 804859c:	8b 55 f4 	movl	-12(%ebp), %edx
+ 804859f:	89 50 04 	movl	%edx, 4(%eax)
+ 80485a2:	83 ec 08 	subl	$8, %esp
+ 80485a5:	8d 45 ec 	leal	-20(%ebp), %eax
+ 80485a8:	50 	pushl	%eax
+ 80485a9:	68 98 86 04 08 	pushl	$134514328
+ 80485ae:	e8 cd fd ff ff 	calll	-563 <.plt+0x10>
+ 80485b3:	83 c4 10 	addl	$16, %esp
+ 80485b6:	8b 45 ec 	movl	-20(%ebp), %eax
+ 80485b9:	83 ec 08 	subl	$8, %esp
+ 80485bc:	50 	pushl	%eax
+ 80485bd:	68 b8 86 04 08 	pushl	$134514360
+ 80485c2:	e8 b9 fd ff ff 	calll	-583 <.plt+0x10>
+ 80485c7:	83 c4 10 	addl	$16, %esp
+ 80485ca:	83 ec 0c 	subl	$12, %esp
+ 80485cd:	68 d8 86 04 08 	pushl	$134514392
+ 80485d2:	e8 d9 fd ff ff 	calll	-551 <.plt+0x40>
+ 80485d7:	83 c4 10 	addl	$16, %esp
+ 80485da:	8b 45 ec 	movl	-20(%ebp), %eax
+ 80485dd:	83 c0 08 	addl	$8, %eax
+ 80485e0:	83 ec 0c 	subl	$12, %esp
+ 80485e3:	50 	pushl	%eax
+ 80485e4:	e8 a7 fd ff ff 	calll	-601 <.plt+0x20>
+ 80485e9:	83 c4 10 	addl	$16, %esp
+ 80485ec:	83 ec 0c 	subl	$12, %esp
+ 80485ef:	ff 75 f4 	pushl	-12(%ebp)
+ 80485f2:	e8 0d ff ff ff 	calll	-243 <unlink>
+ 80485f7:	83 c4 10 	addl	$16, %esp
+ 80485fa:	b8 00 00 00 00 	movl	$0, %eax
+ 80485ff:	8b 4d fc 	movl	-4(%ebp), %ecx
+ 8048602:	c9 	leave
+ 8048603:	8d 61 fc 	leal	-4(%ecx), %esp
+ 8048606:	c3 	retl
+ 8048607:	66 90 	nop
+ 8048609:	66 90 	nop
+ 804860b:	66 90 	nop
+ 804860d:	66 90 	nop
+ 804860f:	90 	nop
+
+__libc_csu_init:
+ 8048610:	55 	pushl	%ebp
+ 8048611:	57 	pushl	%edi
+ 8048612:	56 	pushl	%esi
+ 8048613:	53 	pushl	%ebx
+ 8048614:	e8 07 fe ff ff 	calll	-505 <__x86.get_pc_thunk.bx>
+ 8048619:	81 c3 e7 19 00 00 	addl	$6631, %ebx
+ 804861f:	83 ec 0c 	subl	$12, %esp
+ 8048622:	8b 6c 24 20 	movl	32(%esp), %ebp
+ 8048626:	8d b3 0c ff ff ff 	leal	-244(%ebx), %esi
+ 804862c:	e8 17 fd ff ff 	calll	-745 <_init>
+ 8048631:	8d 83 08 ff ff ff 	leal	-248(%ebx), %eax
+ 8048637:	29 c6 	subl	%eax, %esi
+ 8048639:	c1 fe 02 	sarl	$2, %esi
+ 804863c:	85 f6 	testl	%esi, %esi
+ 804863e:	74 25 	je	37 <__libc_csu_init+0x55>
+ 8048640:	31 ff 	xorl	%edi, %edi
+ 8048642:	8d b6 00 00 00 00 	leal	(%esi), %esi
+ 8048648:	83 ec 04 	subl	$4, %esp
+ 804864b:	ff 74 24 2c 	pushl	44(%esp)
+ 804864f:	ff 74 24 2c 	pushl	44(%esp)
+ 8048653:	55 	pushl	%ebp
+ 8048654:	ff 94 bb 08 ff ff ff 	calll	*-248(%ebx,%edi,4)
+ 804865b:	83 c7 01 	addl	$1, %edi
+ 804865e:	83 c4 10 	addl	$16, %esp
+ 8048661:	39 f7 	cmpl	%esi, %edi
+ 8048663:	75 e3 	jne	-29 <__libc_csu_init+0x38>
+ 8048665:	83 c4 0c 	addl	$12, %esp
+ 8048668:	5b 	popl	%ebx
+ 8048669:	5e 	popl	%esi
+ 804866a:	5f 	popl	%edi
+ 804866b:	5d 	popl	%ebp
+ 804866c:	c3 	retl
+ 804866d:	8d 76 00 	leal	(%esi), %esi
+
+__libc_csu_fini:
+ 8048670:	f3 c3 	rep		retl
+Disassembly of section .fini:
+_fini:
+ 8048674:	53 	pushl	%ebx
+ 8048675:	83 ec 08 	subl	$8, %esp
+ 8048678:	e8 a3 fd ff ff 	calll	-605 <__x86.get_pc_thunk.bx>
+ 804867d:	81 c3 83 19 00 00 	addl	$6531, %ebx
+ 8048683:	83 c4 08 	addl	$8, %esp
+ 8048686:	5b 	popl	%ebx
+ 8048687:	c3 	retl
